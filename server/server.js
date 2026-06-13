@@ -6,15 +6,16 @@ const { Server } = require("socket.io");
 const app = express();
 
 const allowedOrigins = [
-    "http://localhost:5173",
-    "https://YOUR-FRONTEND.vercel.app",
+  "http://localhost:5173",
+  "https://realtime-code-editor-virid.vercel.app",
 ];
 
 app.use(
-    cors({
-        origin: allowedOrigins,
-        methods: ["GET", "POST"],
-    })
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
 );
 
 const server = http.createServer(app);
